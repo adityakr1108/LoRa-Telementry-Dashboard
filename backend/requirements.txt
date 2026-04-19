@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+websockets
+paho-mqtt==1.6.1
+filterpy
+numpy
+python-dotenv

@@ -1,0 +1,112 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Under overlay */
+}
+
+/* Glassmorphism Dashboard Panel */
+.dashboard-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  z-index: 1000;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.glass-panel {
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  pointer-events: auto; /* Catch clicks on the panel */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: white;
+}
+
+.glass-panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-dot.online {
+  background-color: #00ff7f;
+  box-shadow: 0 0 8px #00ff7f;
+}
+
+.status-dot.offline {
+  background-color: #ff3333;
+  box-shadow: 0 0 8px #ff3333;
+}
+
+/* Node Cards */
+.metrics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.node-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.node-card.ok {
+  border-left-color: #00ff7f;
+}
+
+.node-card.warning {
+  border-left-color: #ffae42;
+  background: rgba(255, 174, 66, 0.1);
+}
+
+.node-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.node-card p {
+  margin: 4px 0;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-family: monospace;
+}
+
+.custom-div-icon {
+  background: transparent;
+  border: none;
+}
