@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     // Fetch historical data from SQLite database to pre-populate map
-    fetch('http://localhost:8000/api/history?limit=100')
+    fetch('https://lora-telementry-dashboard.onrender.com/api/history?limit=100')
       .then(res => res.json())
       .then(history => {
         setTrails(prevTrails => {
@@ -63,7 +63,7 @@ function App() {
 
   useEffect(() => {
     // Attempt WebSocket connection
-    const ws = new WebSocket('ws://localhost:8000/ws');
+    const ws = new WebSocket('wss://lora-telementry-dashboard.onrender.com/ws');
 
     ws.onopen = () => {
       console.log('Connected to Backend WebSocket');
